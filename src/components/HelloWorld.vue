@@ -2,7 +2,7 @@
   <div>
     <div class="row">
       <div v-for="(branch,index) in branches" :key="index" class="col-lg-12">
-        <h1>{{branch.name}}</h1>
+        <h1>{{branch.title}}</h1>
       </div>
     </div>
 
@@ -23,9 +23,9 @@ export default {
   },
   methods:{
     fetchData(){
-      axios.get('http://developer.amanabigbazar.com/api/branch').then(response=>{
-        console.log(response.data.data)
-        this.branches=response.data.data
+      axios.get('https://jsplaceholder.typicode.com/todos').then(response=>{
+        console.log(response.data)
+        this.branches=response.data
         console.table(this.branches)
       })
     },
