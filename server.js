@@ -17,11 +17,7 @@ const app=express()
 
 
 
-const port=process.env.PORT || 8000
 
-app.listen(port, () => {
-    console.log(`Server running in ${process.env.NODE_ENV} mode on port ${port}`);
-});
 
 if (process.env.NODE_ENV === 'production') {
     // Static folder
@@ -30,4 +26,10 @@ if (process.env.NODE_ENV === 'production') {
     // Handle SPA
     // app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));
 }
+
+const port=process.env.PORT || 8000
+
+app.listen(port, () => {
+    console.log(`Server running in ${process.env.NODE_ENV} mode on port ${port}`);
+});
 
