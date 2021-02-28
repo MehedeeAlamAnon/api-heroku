@@ -23,7 +23,7 @@ export default {
   },
   methods:{
     fetchData(){
-      axios.get('api/branch').then(response=>{
+      axios.get('http://developer.amanabigbazar.com/api/branch').then(response=>{
         console.log(response.data.data)
         this.branches=response.data.data
         console.table(this.branches)
