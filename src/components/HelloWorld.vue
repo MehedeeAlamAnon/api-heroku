@@ -23,11 +23,17 @@ export default {
   },
   methods:{
     fetchData(){
-      axios.get('https://jsplaceholder.typicode.com/todos').then(response=>{
+      axios.get('https://jsonplaceholder.typicode.com/todos').then(response=>{
         console.log(response.data)
         this.branches=response.data
         console.table(this.branches)
       })
+
+      // axios.get('http://developer.amanabigbazar.com/api/branch').then(response=>{
+      //   console.log(response.data.data)
+      //   this.branches=response.data.data
+      //   console.table(this.branches)
+      // })
     },
   },
 
