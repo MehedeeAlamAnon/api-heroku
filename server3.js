@@ -11,9 +11,11 @@ const app = express();
 app.use('/',serveStatic(path.join(__dirname,'/dist')))
 
 // Configuration
-const PORT=process.env.PORT || 8080
+// const PORT=process.env.PORT || 8080
+const PORT=process.env.PORT || 443
 // const PORT = 8080;
-const HOST = "https://heroku-vue-api.herokuapp.com/";
+const HOST = "heroku-vue-api.herokuapp.com";
+// const HOST = "localhost";
 const API_SERVICE_URL = "http://developer.amanabigbazar.com";
 
 // Logging
@@ -25,13 +27,13 @@ app.get('/info', (req, res, next) => {
 });
 
 // Authorization
-app.use('', (req, res, next) => {
-    if (req.headers.authorization) {
-        next();
-    } else {
-        res.sendStatus(403);
-    }
-});
+// app.use('', (req, res, next) => {
+//     if (req.headers.authorization) {
+//         next();
+//     } else {
+//         res.sendStatus(403);
+//     }
+// });
 
 
 // Proxy endpoints
@@ -39,7 +41,7 @@ app.use('/api', createProxyMiddleware({
     target: API_SERVICE_URL,
     changeOrigin: true,
     pathRewrite: {
-        [`^/json_placeholder`]: '/api',
+        [`^/api`]: '/api',
     },
 }));
 
