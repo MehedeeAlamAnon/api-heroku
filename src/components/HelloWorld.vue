@@ -41,7 +41,7 @@ export default {
       let link="/api/branch"
       loadCategoryData(link)
 
-      axios.get('/api').then(response=>{
+      axios.get('/api/branch').then(response=>{
         console.log(response.data.data)
         this.branches=response.data.data
         console.table(this.branches)

@@ -36,10 +36,10 @@ app.get('/jokes/random', (req, res) => {
     )
 });
 
-app.get('/api', (req, res) => {
+app.get('/api/branch', (req, res) => {
     console.log("Main link:" +mainLink)
     request(
-        { url: 'http://developer.amanabigbazar.com/'+mainLink },
+        { url: 'http://developer.amanabigbazar.com/api/branch'},
         (error, response, body) => {
             if (error || response.statusCode !== 200) {
                 return res.status(500).json({ type: 'error', message: error.message });
