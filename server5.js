@@ -5,6 +5,18 @@ const request = require('request');
 
 const app = express();
 
+var mainLink;
+
+
+ export function loadCategoryData(link){
+    mainLink=link
+}
+
+export function addNumber (a,b){
+    let sum=a+b
+    console.log(sum)
+}
+
 
 
 app.use((req, res, next) => {
@@ -17,7 +29,7 @@ app.get('/jokes/random', (req, res) => {
         { url: 'https://joke-api-strict-cors.appspot.com/jokes/random' },
         (error, response, body) => {
             if (error || response.statusCode !== 200) {
-                return res.status(500).json({ type: 'error', message: err.message });
+                return res.status(500).json({ type: 'error', message: error.message });
             }
 
             res.json(JSON.parse(body));
@@ -27,12 +39,13 @@ app.get('/jokes/random', (req, res) => {
     )
 });
 
-app.get('/api/', (req, res) => {
+app.get('/api', (req, res) => {
     request(
-        { url: 'http://developer.amanabigbazar.com/api/' },
+
+        { url: 'http://developer.amanabigbazar.com/'+mainLink },
         (error, response, body) => {
             if (error || response.statusCode !== 200) {
-                return res.status(500).json({ type: 'error', message: err.message });
+                return res.status(500).json({ type: 'error', message: error.message });
             }
 
             res.json(JSON.parse(body));

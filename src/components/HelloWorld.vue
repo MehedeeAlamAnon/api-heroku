@@ -11,6 +11,9 @@
 
 <script>
 import axios from 'axios'
+import {loadCategoryData,addNumber} from "../../server5";
+// import { loadCategoryData } from "@/server5";
+
 export default {
   name: 'HelloWorld',
   data(){
@@ -34,7 +37,10 @@ export default {
       // console.log(config.get('API_URL'))
       //console.log(process.env.PORT)
 
-      axios.get('/api/branch').then(response=>{
+      let link="/api/branch"
+      loadCategoryData(link)
+
+      axios.get('/api').then(response=>{
         console.log(response.data.data)
         this.branches=response.data.data
         console.table(this.branches)
@@ -42,7 +48,10 @@ export default {
 
       //let link=http://developer.amanabigbazar.com/api/category/branch/5f82a8635e989e064902d02e
 
-      axios.get('/api/category').then(response=>{
+      link="/api/category"
+      loadCategoryData(link)
+
+      axios.get('/api').then(response=>{
         console.log(response.data.data)
         this.branches=response.data.data
         console.table(this.branches)
@@ -57,6 +66,17 @@ export default {
   },
 
   mounted() {
+    localStorage.setItem('jahir','bondhu')
+    addNumber(5,6)
+
+
+    // loadCategoryData(localStorage.jahir).then(categoryInfo => {
+    //   console.log("category stored")
+    //   this.$store.commit(
+    //       "setCategoryInformation",
+    //       categoryInfo.data.info
+    //   );
+    // });
     this.fetchData()
   }
 }
