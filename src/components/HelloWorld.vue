@@ -11,11 +11,14 @@
 
 <script>
 import axios from 'axios'
+// import config from ''
+const config = require('config');
 export default {
   name: 'HelloWorld',
   data(){
     return{
-      branches:[]
+      branches:[],
+      baseURL: process.env.API_URL
     }
   },
   props: {
@@ -29,7 +32,11 @@ export default {
       //   console.table(this.branches)
       // })
 
-      axios.get('api/branch').then(response=>{
+
+      console.log(config.get('API_URL'))
+      //console.log(process.env.PORT)
+
+      axios.get('/api/branch').then(response=>{
         console.log(response.data.data)
         this.branches=response.data.data
         console.table(this.branches)

@@ -12,10 +12,11 @@ app.use('/',serveStatic(path.join(__dirname,'/dist')))
 
 // Configuration
 // const PORT=process.env.PORT || 8080
-const PORT=process.env.PORT || 443
+const PORT=process.env.PORT || 80
 // const PORT = 8080;
-const HOST = "heroku-vue-api.herokuapp.com";
-// const HOST = "localhost";
+// const HOST = "facebook.com";
+// const HOST = "developer.amanabigbazar.com";
+const HOST = "localhost";
 const API_SERVICE_URL = "http://developer.amanabigbazar.com";
 
 // Logging
@@ -44,6 +45,7 @@ app.use('/api', createProxyMiddleware({
         [`^/api`]: '/api',
     },
 }));
+
 
 // Start the Proxy
 app.listen(PORT, HOST, () => {
