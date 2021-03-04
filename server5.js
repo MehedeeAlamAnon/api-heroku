@@ -8,11 +8,11 @@ const app = express();
 var mainLink;
 
 
- export function loadCategoryData(link){
+export const loadCategoryData=(link)=>{
     mainLink=link
 }
 
-export function addNumber (a,b){
+export const addNumber= (a,b)=>{
     let sum=a+b
     console.log(sum)
 }
