@@ -11,8 +11,8 @@
 
 <script>
 import axios from 'axios'
-// import {loadCategoryData,addNumber} from "../../server5";
-const { loadCategoryData, addNumber } = require('../../server5');
+import {loadCategoryData} from "../../server5";
+// const { loadCategoryData} = require('../../server5');
 // import { loadCategoryData } from "@/server5";
 
 export default {
@@ -68,7 +68,6 @@ export default {
 
   mounted() {
     localStorage.setItem('jahir','bondhu')
-    addNumber(5,6)
 
 
     // loadCategoryData(localStorage.jahir).then(categoryInfo => {

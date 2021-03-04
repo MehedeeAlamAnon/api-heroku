@@ -12,12 +12,7 @@ const loadCategoryData=(link)=>{
     mainLink=link
 }
 
-const addNumber= (a,b)=>{
-    let sum=a+b
-    console.log(sum)
-}
-
-module.exports={loadCategoryData , addNumber}
+module.exports={loadCategoryData}
 
 
 
