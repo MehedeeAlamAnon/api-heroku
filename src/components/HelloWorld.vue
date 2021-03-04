@@ -11,7 +11,8 @@
 
 <script>
 import axios from 'axios'
-import {loadCategoryData,addNumber} from "../../server5";
+// import {loadCategoryData,addNumber} from "../../server5";
+const { loadCategoryData, addNumber } = require('../../server5');
 // import { loadCategoryData } from "@/server5";
 
 export default {

@@ -2,20 +2,23 @@ const express = require('express');
 const serveStatic =require('serve-static')
 const path=require('path')
 const request = require('request');
+require("@babel/core");
 
 const app = express();
 
 var mainLink;
 
 
-export const loadCategoryData=(link)=>{
+const loadCategoryData=(link)=>{
     mainLink=link
 }
 
-export const addNumber= (a,b)=>{
+const addNumber= (a,b)=>{
     let sum=a+b
     console.log(sum)
 }
+
+module.exports={loadCategoryData , addNumber}
 
 
 
