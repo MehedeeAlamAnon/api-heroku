@@ -44,11 +44,11 @@ app.get('/api/branch', (req, res) => {
         { url: 'http://developer.amanabigbazar.com/api/branch'},
         (error, response, body) => {
             if (error || response.statusCode !== 200) {
-                return res.status(500).json({ type: 'error', message: err.message });
+                return res.status(500).json({ type: 'error', message: error.message });
             }
 
             res.json(JSON.parse(body));
-            //console.log("Mouri")
+            console.log("Mouri")
             console.log(res.json(JSON.parse(body)))
         },
 
