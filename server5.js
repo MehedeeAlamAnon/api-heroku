@@ -38,7 +38,7 @@ app.get('/jokes/random', (req, res) => {
     )
 });
 
-app.get('/api', (req, res) => {
+app.get('/api/branch', (req, res) => {
     //console.log("Main link:" +mainLink)
     request(
 
