@@ -11,8 +11,6 @@
 
 <script>
 import axios from 'axios'
-// import config from ''
-const config = require('config');
 export default {
   name: 'HelloWorld',
   data(){
@@ -33,7 +31,7 @@ export default {
       // })
 
 
-      console.log(config.get('API_URL'))
+      // console.log(config.get('API_URL'))
       //console.log(process.env.PORT)
 
       axios.get('/api/branch').then(response=>{
