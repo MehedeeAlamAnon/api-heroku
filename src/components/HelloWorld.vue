@@ -67,7 +67,7 @@ export default {
   },
 
   mounted() {
-    localStorage.setItem('jahir','bondhu')
+    //localStorage.setItem('jahir','bondhu')
 
 
     // loadCategoryData(localStorage.jahir).then(categoryInfo => {

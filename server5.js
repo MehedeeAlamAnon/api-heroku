@@ -39,17 +39,16 @@ app.get('/jokes/random', (req, res) => {
 });
 
 app.get('/api/branch', (req, res) => {
-    //console.log("Main link:" +mainLink)
     request(
 
         { url: 'http://developer.amanabigbazar.com/api/branch'},
         (error, response, body) => {
             if (error || response.statusCode !== 200) {
-                return res.status(500).json({ type: 'error', message: error.message });
+                return res.status(500).json({ type: 'error', message: err.message });
             }
 
             res.json(JSON.parse(body));
-            console.log("Mouri")
+            //console.log("Mouri")
             console.log(res.json(JSON.parse(body)))
         },
 
