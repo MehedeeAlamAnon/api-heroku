@@ -49,14 +49,14 @@ export default {
 
       //let link=http://developer.amanabigbazar.com/api/category/branch/5f82a8635e989e064902d02e
 
-      link="/api/category"
-      loadCategoryData(link)
-
-      axios.get('/api').then(response=>{
-        console.log(response.data.data)
-        this.branches=response.data.data
-        console.table(this.branches)
-      })
+      // link="/api/category"
+      // loadCategoryData(link)
+      //
+      // axios.get('/api').then(response=>{
+      //   console.log(response.data.data)
+      //   this.branches=response.data.data
+      //   console.table(this.branches)
+      // })
 
       axios.get('/jokes/random').then(response=>{
         console.log(response.data)
