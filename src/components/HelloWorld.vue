@@ -11,7 +11,7 @@
 
 <script>
 import axios from 'axios'
-import {loadCategoryData} from "../../server5";
+// import {loadCategoryData} from "../../server5";
 // const { loadCategoryData} = require('../../server5');
 // import { loadCategoryData } from "@/server5";
 
@@ -39,9 +39,9 @@ export default {
       //console.log(process.env.PORT)
 
       //let link="/api/branch"
-      loadCategoryData(localStorage.jahir)
+      // loadCategoryData(localStorage.jahir)
 
-      axios.get('/api/branch').then(response=>{
+      axios.get('/api').then(response=>{
         console.log(response.data.data)
         this.branches=response.data.data
         console.table(this.branches)

@@ -5,17 +5,17 @@ const request = require('request');
 
 const app = express();
 
-var mainLink='anon';
-
-
-const loadCategoryData=(link)=>{
-    mainLink=link
-    console.log(mainLink)
-}
-
-module.exports={loadCategoryData}
-
-console.log(mainLink)
+// var mainLink='anon';
+//
+//
+// const loadCategoryData=(link)=>{
+//     mainLink=link
+//     console.log(mainLink)
+// }
+//
+// module.exports={loadCategoryData}
+//
+// console.log(mainLink)
 
 
 app.use((req, res, next) => {
@@ -38,9 +38,10 @@ app.get('/jokes/random', (req, res) => {
     )
 });
 
-app.get('/api/branch', (req, res) => {
+app.get('/api', (req, res) => {
     //console.log("Main link:" +mainLink)
     request(
+
         { url: 'http://developer.amanabigbazar.com/api/branch'},
         (error, response, body) => {
             if (error || response.statusCode !== 200) {
@@ -50,7 +51,8 @@ app.get('/api/branch', (req, res) => {
             res.json(JSON.parse(body));
             console.log("Mouri")
             console.log(res.json(JSON.parse(body)))
-        }
+        },
+
     )
 });
 
