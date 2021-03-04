@@ -5,15 +5,17 @@ const request = require('request');
 
 const app = express();
 
-// var mainLink;
+var mainLink='anon';
 
 
-// const loadCategoryData=(link)=>{
-//     mainLink=link
-// }
-//
-// module.exports={loadCategoryData}
+const loadCategoryData=(link)=>{
+    mainLink=link
+    console.log(mainLink)
+}
 
+module.exports={loadCategoryData}
+
+console.log(mainLink)
 
 
 app.use((req, res, next) => {
