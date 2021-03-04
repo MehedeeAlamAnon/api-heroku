@@ -37,8 +37,8 @@ app.get('/jokes/random', (req, res) => {
 });
 
 app.get('/api', (req, res) => {
+    console.log("Main link:" +mainLink)
     request(
-
         { url: 'http://developer.amanabigbazar.com/'+mainLink },
         (error, response, body) => {
             if (error || response.statusCode !== 200) {
@@ -46,7 +46,7 @@ app.get('/api', (req, res) => {
             }
 
             res.json(JSON.parse(body));
-            console.log("Anon")
+            console.log("Mouri")
             console.log(res.json(JSON.parse(body)))
         }
     )
