@@ -5,14 +5,14 @@ const request = require('request');
 
 const app = express();
 
-var mainLink;
+// var mainLink;
 
 
-const loadCategoryData=(link)=>{
-    mainLink=link
-}
-
-module.exports={loadCategoryData}
+// const loadCategoryData=(link)=>{
+//     mainLink=link
+// }
+//
+// module.exports={loadCategoryData}
 
 
 
@@ -37,7 +37,7 @@ app.get('/jokes/random', (req, res) => {
 });
 
 app.get('/api/branch', (req, res) => {
-    console.log("Main link:" +mainLink)
+    //console.log("Main link:" +mainLink)
     request(
         { url: 'http://developer.amanabigbazar.com/api/branch'},
         (error, response, body) => {

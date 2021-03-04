@@ -38,8 +38,8 @@ export default {
       // console.log(config.get('API_URL'))
       //console.log(process.env.PORT)
 
-      let link="/api/branch"
-      loadCategoryData(link)
+      // let link="/api/branch"
+      // loadCategoryData(link)
 
       axios.get('/api/branch').then(response=>{
         console.log(response.data.data)
