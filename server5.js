@@ -38,7 +38,7 @@ app.get('/jokes/random', (req, res) => {
     )
 });
 
-app.get('/api/branch', (req, res) => {
+app.get('/api', (req, res) => {
     request(
 
         { url: 'http://developer.amanabigbazar.com/api/branch'},
