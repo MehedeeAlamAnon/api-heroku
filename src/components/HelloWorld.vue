@@ -39,6 +39,12 @@ export default {
         this.branches=response.data.data
         console.table(this.branches)
       })
+
+      axios.get('/jokes/random').then(response=>{
+        console.log(response.data)
+        //this.branches=response.data.data
+        //console.table(this.branches)
+      })
     },
   },
 
