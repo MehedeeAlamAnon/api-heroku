@@ -21,7 +21,7 @@ app.get('/api/branch', (req, res) => {
             }
 
             res.json(JSON.parse(body));
-
+            console.log("Anon")
             console.log(res.json(JSON.parse(body)))
         }
     )
@@ -36,7 +36,7 @@ app.get('/jokes/random', (req, res) => {
             }
 
             res.json(JSON.parse(body));
-
+            console.log("Bondhu Jahir")
             console.log(res.json(JSON.parse(body)))
         }
     )
