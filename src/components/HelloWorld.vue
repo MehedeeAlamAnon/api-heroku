@@ -40,6 +40,14 @@ export default {
         console.table(this.branches)
       })
 
+      //let link=http://developer.amanabigbazar.com/api/category/branch/5f82a8635e989e064902d02e
+
+      axios.get('/api/category').then(response=>{
+        console.log(response.data.data)
+        this.branches=response.data.data
+        console.table(this.branches)
+      })
+
       axios.get('/jokes/random').then(response=>{
         console.log(response.data)
         //this.branches=response.data.data

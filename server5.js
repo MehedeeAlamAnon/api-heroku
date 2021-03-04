@@ -27,20 +27,20 @@ app.get('/jokes/random', (req, res) => {
     )
 });
 
-// app.get('/api/branch', (req, res) => {
-//     request(
-//         { url: 'http://developer.amanabigbazar.com/api/branch' },
-//         (error, response, body) => {
-//             if (error || response.statusCode !== 200) {
-//                 return res.status(500).json({ type: 'error', message: err.message });
-//             }
-//
-//             res.json(JSON.parse(body));
-//             console.log("Anon")
-//             console.log(res.json(JSON.parse(body)))
-//         }
-//     )
-// });
+app.get('/api/', (req, res) => {
+    request(
+        { url: 'http://developer.amanabigbazar.com/api/' },
+        (error, response, body) => {
+            if (error || response.statusCode !== 200) {
+                return res.status(500).json({ type: 'error', message: err.message });
+            }
+
+            res.json(JSON.parse(body));
+            console.log("Anon")
+            console.log(res.json(JSON.parse(body)))
+        }
+    )
+});
 
 
 
